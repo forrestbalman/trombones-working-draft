@@ -151,7 +151,7 @@ export const phases = writable({
 	},
 	"Rustling Leaves": {
 		length: [34, 40],
-		delay: [20, 25],
+		delay: [40, 45],
 		durations: {
 			short: 90,
 			medium: 10,
@@ -168,7 +168,7 @@ export const phases = writable({
 	},
 	"Industrial Engine": {
 		length: [25, 27],
-		delay: [5, 15],
+		delay: [15, 25],
 		durations: {
 			short: 0,
 			medium: 20,
@@ -186,7 +186,7 @@ export const phases = writable({
 	},
 	"Noisy Birds": {
 		length: [20, 24],
-		delay: [5, 10],
+		delay: [15, 25],
 		durations: {
 			short: 90,
 			medium: 10,
@@ -203,9 +203,9 @@ export const phases = writable({
 		},
 		mute: "Plunger",
 	},
-	"Underwater": {
+	Underwater: {
 		length: [20, 24],
-		delay: [5, 10],
+		delay: [60, 70],
 		durations: {
 			short: 70,
 			medium: 30,
@@ -223,3 +223,5 @@ export const phases = writable({
 		mute: "Plunger",
 	},
 });
+export const audioStarted = writable(false);
+export const pieceStarted = writable(false);

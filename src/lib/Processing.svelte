@@ -1,13 +1,13 @@
 <script>
 	import * as Tone from "tone";
-	import { nightMode, elementOpacities, currentPhase } from "$lib/stores.js";
+	import { nightMode, elementOpacities, currentPhase, audioStarted } from "$lib/stores.js";
 
 	let audioReady = false;
 	let mic, convolver, crusher, delay, underwater, vibrato, nonReverbEffects;
 
 	async function startAudio() {
-		Tone.getContext.latencyHint = "playback";
 		await Tone.start();
+		Tone.setContext(new Tone.Context({ latencyHint: "interactive" }));
 		audioReady = true;
 	}
 
@@ -35,6 +35,7 @@
 
 	$: if (audioReady) {
 		startMic();
+		$audioStarted = true;
 	}
 
 	$: if ($currentPhase === "Transition") {
@@ -64,5 +65,5 @@
 </script>
 
 {#if !audioReady}
-	<button class="border-0 px-3 py-1 {$nightMode ? 'bg-secondary text-dark' : 'bg-secondary text-light'}" disabled="{$elementOpacities === 0 || true}" on:click="{startAudio}">Start Audio (disabled for now)</button>
+	<button class="border-0 px-3 py-1 {$nightMode ? 'bg-light text-dark' : 'bg-dark text-light'}" disabled="{$elementOpacities === 0}" on:click="{startAudio}">Start Audio</button>
 {/if}
