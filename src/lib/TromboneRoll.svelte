@@ -1,4 +1,5 @@
 <script>
+	import Wedge from "$lib/Wedge.svelte";
 	import { nightMode } from "$lib/stores.js";
 
 	export let phase, tromboneRollWidth;
@@ -11,11 +12,7 @@
 	<div class="endzone-right position-absolute h-100 opacity-50" style="background: {$nightMode ? 'white' : '#212529'}"></div>
 	{#if phase}
 		{#each phase.wedges as { length, height, position, crescendo }}
-			{#if crescendo}
-				<div class="wedge position-absolute top-50 translate-middle-y {$nightMode ? 'bg-white' : 'bg-dark'}" style="width: {length}%; height: {height}px; left: {position}%; clip-path: {crescendo};"></div>
-			{:else}
-				<div class="wedge position-absolute top-50 translate-middle-y {$nightMode ? 'bg-white' : 'bg-dark'}" style="width: {length}%; height: {height}px; left: {position}%;"></div>
-			{/if}
+			<Wedge {length} {height} {position} {crescendo} />
 		{/each}
 	{/if}
 </div>
