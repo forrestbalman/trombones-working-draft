@@ -3,15 +3,13 @@
 	import Slider from "$lib/Slider.svelte";
 	import TromboneRoll from "$lib/TromboneRoll.svelte";
 	import ArticulationLane from "$lib/ArticulationLane.svelte";
-	import { nightMode, elementOpacities, phases, currentPhase, pieceStarted } from "$lib/stores.js";
+	import { elementOpacities, phases, currentPhase, pieceStarted } from "$lib/stores.js";
 	import { tweened } from "svelte/motion";
 
 	let nextWidth = 50;
 	let moveCounter = 0;
 	let countdownStart = 10;
-	let phaseNameDisplay;
-	let tromboneRollWidth;
-	let phase;
+	let phaseNameDisplay, tromboneRollWidth, phase;
 	const leftSliderWidth = tweened(nextWidth);
 
 	function startPiece() {

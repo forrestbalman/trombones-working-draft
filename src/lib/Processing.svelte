@@ -15,7 +15,7 @@
 		mic = new Tone.UserMedia().toDestination();
 		convolver = new Tone.Convolver("/1st_baptist_nashville_balcony.wav").toDestination();
 
-		crusher = new Tone.BitCrusher(5).toDestination();
+		crusher = new Tone.BitCrusher(12).toDestination();
 		delay = new Tone.FeedbackDelay(0.5, 0.5).toDestination();
 		underwater = new Tone.Filter(100, "lowpass").toDestination();
 		vibrato = new Tone.Vibrato(15, 0.1).toDestination();
@@ -61,9 +61,11 @@
 		convolver.connect(delay);
 		mic.connect(vibrato);
 		convolver.connect(vibrato);
+		mic.connect(crusher);
+		convolver.connect(crusher);
 	}
 </script>
 
 {#if !audioReady}
-	<button class="border-0 px-3 py-1 {$nightMode ? 'bg-light text-dark' : 'bg-dark text-light'}" disabled="{$elementOpacities === 0}" on:click="{startAudio}">Start Audio</button>
+	<button class="border-0 px-3 py-1 {$nightMode ? 'bg-light text-dark' : 'bg-dark text-light'}" disabled="{$elementOpacities === 0}" onclick="{startAudio}">Start Audio</button>
 {/if}

@@ -14,7 +14,7 @@
 	</h1>
 	<div class="d-flex justify-content-center gap-2">
 		{#if $audioStarted}
-			<button class="border-0 px-3 py-1 {$nightMode ? 'bg-white text-dark' : 'bg-dark text-light'}" disabled="{$elementOpacities === 0}" on:click|preventDefault="{startPiece}">Start</button>
+			<button class="border-0 px-3 py-1 {$nightMode ? 'bg-white text-dark' : 'bg-dark text-light'}" disabled="{$elementOpacities === 0}" onclick="{startPiece}">Start</button>
 		{:else}
 			<Processing />
 		{/if}
