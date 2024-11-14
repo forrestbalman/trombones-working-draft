@@ -21,10 +21,6 @@
 {/if}
 
 <style>
-	* {
-		font-family: "Poppins", sans-serif;
-	}
-
 	.phase-text,
 	.moveCounter-text {
 		transition: opacity 300ms cubic-bezier(0.5, 1, 0.89, 1);
