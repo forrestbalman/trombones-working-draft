@@ -14,7 +14,8 @@
 			<div>
 				<p>
 					<i class="bi bi-circle-half"></i> One can only try to be like you
-					<i class="bi bi-circle-half d-inline-block"></i> is a piece for two trombones and electronics inspired by a theater game that's common in drama classes/clubs called "Mirroring". In a pair of participants, one person takes the lead, while the other follows.
+					<i class="bi bi-circle-half d-inline-block"></i> is a piece for two trombones and electronics inspired by a theater game that's common in drama classes/clubs called "Mirroring". In a pair of participants, one person takes the lead, while the other mimics what the leader is doing, as if they are looking
+					in a mirror.
 				</p>
 				<div class="embed-container">
 					<iframe src="https://www.youtube.com/embed/L2dGy3tXlCc" title="Mirroring game example" frameborder="0" allowfullscreen></iframe>
@@ -54,6 +55,13 @@
 		<div class="mb-5">
 			<h2 class="text-decoration-underline">Score</h2>
 			<video class="w-100" src="/loop.mp4" muted autoplay loop></video>
+			<div class="mb-4">
+				<h4>Overview</h4>
+				<p>
+					The score is designed to be an intuitive tablature that indicates: slide position, volume, duration, articulation, and accessory. Keep in mind that, sometimes, you might be moving the slide without blowing into the instrument, and that both sets of animated instructions are independent of one
+					another. The piece is more about the physicality of the trombone, and the symmetry created by the two performers facing one another.
+				</p>
+			</div>
 			<div class="mb-4">
 				<h4>Sliders</h4>
 				<p>
