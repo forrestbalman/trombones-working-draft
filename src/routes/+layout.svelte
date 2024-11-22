@@ -10,7 +10,7 @@
 	<div class="d-flex align-items-center gap-3">
 		<a href="/" class="text-decoration-none {$nightMode ? 'text-light' : 'text-dark'}">Home</a>
 		<a href="/about" class="text-decoration-none {$nightMode ? 'text-light' : 'text-dark'}">About</a>
-		<button class="rounded-5 border-0 position-relative" style="background: {$nightMode ? '#f3f3f3' : '#333'}" onclick="{() => ($nightMode = !$nightMode)}">
+		<button aria-label="night or day mode" class="rounded-5 border-0 position-relative" style="background: {$nightMode ? '#f3f3f3' : '#333'}" onclick="{() => ($nightMode = !$nightMode)}">
 			<i
 				class="bi position-absolute top-50 translate-middle-y mx-2
             {$nightMode ? 'bi-moon-stars text-black' : 'bi-brightness-high text-white'}"

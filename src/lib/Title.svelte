@@ -1,10 +1,7 @@
 <script>
 	import Processing from "$lib/Processing.svelte";
+	import Electronics from "$lib/Electronics.svelte";
 	import { nightMode, elementOpacities, audioStarted, pieceStarted } from "$lib/stores.js";
-
-	function startPiece() {
-		$pieceStarted = true;
-	}
 </script>
 
 <div class="start-header w-100 d-flex flex-column gap-3 user-select-none" style="opacity: {$elementOpacities.startHeader}%;">
@@ -13,19 +10,12 @@
 		<i class="bi bi-circle-half d-inline-block"></i>
 	</h1>
 	<div class="d-flex justify-content-center gap-2">
-		{#if $audioStarted}
-			<button class="border-0 px-3 py-1 {$nightMode ? 'bg-white text-dark' : 'bg-dark text-light'}" disabled="{$elementOpacities === 0}" onclick="{startPiece}">Start</button>
-		{:else}
-			<Processing />
-		{/if}
+		<Processing />
+		<Electronics />
 	</div>
 </div>
 
 <style>
-	button {
-		transition: all 300ms cubic-bezier(0.5, 1, 0.89, 1);
-	}
-
 	.bi-circle-half.d-inline-block {
 		transform: scaleX(-1);
 	}

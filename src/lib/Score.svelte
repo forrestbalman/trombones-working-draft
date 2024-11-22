@@ -21,7 +21,7 @@
 		// makes start button invisible and not interactive
 		setTimeout(() => {
 			generatePhase();
-			$elementOpacities.startHeader = 0;
+			// $elementOpacities.startHeader = 0;
 			$elementOpacities.score = 100;
 			$elementOpacities.phaseName = 100;
 		}, 1000);
@@ -230,12 +230,7 @@
 		}
 
 		function generateArticulationBreakdown() {
-			const articulations = p.articulations;
-			const articulationBreakdown = [];
-
-			for (const articulation in articulations) {
-				articulationBreakdown.push([articulation, articulations[articulation]]);
-			}
+			const articulationBreakdown = p.articulations;
 
 			for (let i = 0; i < articulationBreakdown.length; i++) {
 				articulationBreakdown[i] = [articulationBreakdown[i][0], Math.floor(phaseLength * (articulationBreakdown[i][1] / 100))];
@@ -270,15 +265,10 @@
 		};
 
 		phaseNameDisplay = phase.name;
-
-		if (!$currentPhase) {
-			$currentPhase = phase.name;
-		}
+		currentPhase.set(phase.name);
 
 		// makes the phase name visible after the phase has been generated
 		$elementOpacities.phaseName = 100;
-
-		console.log(phase);
 	}
 
 	// for moving wedges across the screen
@@ -358,7 +348,7 @@
 					generatePhase();
 					let nextPhaseCountdown = generateDelayBetweenPhases();
 					phaseNameDisplay = nextPhaseCountdown;
-					$currentPhase = "Transition";
+					currentPhase.set("Transition");
 					const checkPhaseNameIsNumber = setInterval(() => {
 						if (!isNaN(phaseNameDisplay)) {
 							clearInterval(checkPhaseNameIsNumber);
@@ -370,7 +360,7 @@
 								if (nextPhaseCountdown === 0) {
 									clearInterval(nextPhaseCountdownTimer);
 									$elementOpacities.phaseName = 0;
-									$currentPhase = phase.name;
+									currentPhase.set(phase.name);
 
 									setTimeout(() => {
 										phaseNameDisplay = phase.name;
