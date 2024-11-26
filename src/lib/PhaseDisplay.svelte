@@ -1,5 +1,5 @@
 <script>
-	import { nightMode, elementOpacities } from "$lib/stores.js";
+	import { nightMode, elementOpacities } from "$lib/stores";
 
 	export let phase, phaseNameDisplay, moveCounter;
 </script>

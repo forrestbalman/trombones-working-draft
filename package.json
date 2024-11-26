@@ -3,7 +3,9 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
+		"start:server": "node server.js",
+		"start:client": "vite dev",
+		"dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
 		"build": "vite build",
 		"preview": "vite preview"
 	},
@@ -12,13 +14,18 @@
 		"@sveltejs/adapter-node": "^5.2.9",
 		"@sveltejs/kit": "^2.5.27",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"concurrently": "^9.1.0",
+		"svelte-check": "^4.1.0",
+		"typescript": "^5.7.2",
 		"vite": "^5.4.4"
 	},
 	"type": "module",
 	"dependencies": {
 		"bootstrap": "^5.3.3",
 		"bootstrap-icons": "^1.11.3",
+		"osc-js": "^2.4.1",
 		"svelte": "^5.2.7",
-		"tone": "^15.0.4"
+		"tone": "^15.0.4",
+		"ws": "^8.18.0"
 	}
 }

@@ -3,7 +3,7 @@
 	import Slider from "$lib/Slider.svelte";
 	import TromboneRoll from "$lib/TromboneRoll.svelte";
 	import ArticulationLane from "$lib/ArticulationLane.svelte";
-	import { elementOpacities, phases, currentPhase, pieceStarted } from "$lib/stores.js";
+	import { elementOpacities, phases, currentPhase, pieceStarted, burstWindow, currentWedge } from "$lib/stores";
 	import { tweened } from "svelte/motion";
 
 	let nextWidth = 50;
@@ -293,6 +293,14 @@
 			const distancePerSecond = 20;
 			const distancePerFrame = (distancePerSecond / 1000) * deltaTime;
 
+			// sets $burstWindow to the low end of the phase delay and the shortest wedge length
+			function calculateBurstWindow() {
+				const firstNotPassedWedge = phase.wedges.filter((w) => !w.passed)[0];
+				$burstWindow = (firstNotPassedWedge.delay * 1000) / 20 + (firstNotPassedWedge.length * 1000) / 20;
+				$currentWedge = firstNotPassedWedge;
+			}
+			calculateBurstWindow();
+
 			// if the phase has a wedges array, move the wedge by subtracting from its current position
 			// set the "passed" property to true if it has traveled the entire length of the trombone roll
 			if (phase.wedges) {
@@ -348,7 +356,8 @@
 					generatePhase();
 					let nextPhaseCountdown = generateDelayBetweenPhases();
 					phaseNameDisplay = nextPhaseCountdown;
-					currentPhase.set("Transition");
+					$currentPhase = "Transition";
+					$burstWindow = null;
 					const checkPhaseNameIsNumber = setInterval(() => {
 						if (!isNaN(phaseNameDisplay)) {
 							clearInterval(checkPhaseNameIsNumber);

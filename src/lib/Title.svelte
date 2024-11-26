@@ -1,7 +1,6 @@
 <script>
 	import Processing from "$lib/Processing.svelte";
-	import Electronics from "$lib/Electronics.svelte";
-	import { nightMode, elementOpacities, audioStarted, pieceStarted } from "$lib/stores.js";
+	import { nightMode, elementOpacities } from "$lib/stores";
 </script>
 
 <div class="start-header w-100 d-flex flex-column gap-3 user-select-none" style="opacity: {$elementOpacities.startHeader}%;">
@@ -11,7 +10,6 @@
 	</h1>
 	<div class="d-flex justify-content-center gap-2">
 		<Processing />
-		<Electronics />
 	</div>
 </div>
 

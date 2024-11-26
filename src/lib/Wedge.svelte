@@ -1,5 +1,5 @@
 <script>
-	import { nightMode } from "$lib/stores.js";
+	import { nightMode } from "$lib/stores";
 
 	export let length, height, position, crescendo;
 </script>

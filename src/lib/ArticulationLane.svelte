@@ -1,5 +1,5 @@
 <script>
-	import { nightMode } from "$lib/stores.js";
+	import { nightMode } from "$lib/stores";
 
 	export let phase;
 </script>

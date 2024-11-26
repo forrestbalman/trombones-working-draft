@@ -1,6 +1,6 @@
 <script>
 	import Wedge from "$lib/Wedge.svelte";
-	import { nightMode } from "$lib/stores.js";
+	import { nightMode } from "$lib/stores";
 
 	export let phase, tromboneRollWidth;
 </script>
