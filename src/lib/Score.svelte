@@ -265,7 +265,7 @@
 		};
 
 		phaseNameDisplay = phase.name;
-		currentPhase.set(phase.name);
+		$currentPhase = phase.name;
 
 		// makes the phase name visible after the phase has been generated
 		$elementOpacities.phaseName = 100;

@@ -1,5 +1,5 @@
 <script>
-	import { nightMode, pieceStarted } from "$lib/stores";
+	import { nightMode, pieceStarted, currentPhase } from "$lib/stores";
 	import { onMount } from "svelte";
 	import OSC from "osc-js";
 
@@ -8,6 +8,10 @@
 	function startPiece() {
 		$pieceStarted = true;
 		osc.send(new OSC.Message("/pieceStarted"));
+	}
+
+	$: if ($currentPhase) {
+		osc.send(new OSC.Message("/currentPhase", $currentPhase));
 	}
 
 	onMount(() => {

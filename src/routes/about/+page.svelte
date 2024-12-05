@@ -45,10 +45,10 @@
 			</div>
 			<div>
 				<h4>Setting up Electronics + Starting the Piece</h4>
-				<p>
-					The <span class="fst-italic">Start Audio</span> button will prompt you to allow access to your microphone the first time you load the web page. If you allow access on every visit, it may not prompt you again until you adjust the preference in your browser settings. After you allow access, the
-					<span class="fst-italic">Start</span> button will take its place. Clicking this button will start the piece.
-				</p>
+				<p>To run the piece you're going to need <span class="text-warning">an IDE, like <a href="https://code.visualstudio.com/download">VSCode</a></span>, and a copy of <a href="https://cycling74.com/downloads">Max MSP</a> for all processing and electronic accompaniment. A free version of Max is fine.</p>
+				<ol>
+					<li>Download a local copy of the score from the <a href="/">GitHub</a> repository. It will contain the score and Max patch</li>
+				</ol>
 			</div>
 		</div>
 		<!-- About the score -->
