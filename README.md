@@ -1,24 +1,12 @@
-# Piece for even numbers of trombones
+One can only try to be like you
 
-Notation
-    Two colored slider that moves left and right
-    Player is assigned a color at the start
-    One side will be the inverse of the other
-    
-    Experimental:
-        A circle that pulses at a constant rate
+This is a piece for pairs of trombones. This is the download page for all of the files needed to perform the piece.
 
-Effects
-    Effects played into bi-directional microphone: Delay, reverb, pitch shift?
-
-Articulation? Mutes? Processing?
-    Should include articulation
-    Possibility of bridging gap between silence and tone
-        Breathiness spectrum
-        What's silence? What's tone?
-
-Obscuring the score?
-    Is "Moving in" necessary?
-        Consistent system
-        The performer will already know, but since the performer knows in advance, they don't need to be obvious to the viewer.
-
+1. Download (or clone if you know how to do that) the contents of this repository from the "code" dropdown near the top of the page.
+2. Open the folder in an IDE of your choosing (preferably one that has an integrated terminal).
+3. In a terminal, cd into the root of the directory and type "npm i" to install all dependencies.
+4. In a terminal, type "npm run dev" to start both the local development server, and the servers for communicating with Max through OSC messages.
+5. Navigate to "http://localhost:5173" to view the score, and press "F11" to full screen it.
+6. Open up the Max patch located in the "static" folder.
+7. Configure your interface's settings in Max and ensure all mics are working.
+8. Press "Start" on the score when ready.

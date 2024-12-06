@@ -45,7 +45,10 @@
 			</div>
 			<div>
 				<h4>Setting up Electronics + Starting the Piece</h4>
-				<p>To run the piece you're going to need <span class="text-warning">an IDE, like <a href="https://code.visualstudio.com/download">VSCode</a></span>, and a copy of <a href="https://cycling74.com/downloads">Max MSP</a> for all processing and electronic accompaniment. A free version of Max is fine.</p>
+				<p>
+					To run the piece you're going to need <span class="text-warning">an IDE, like <a href="https://code.visualstudio.com/download">VSCode</a>, a version of <a href="https://nodejs.org/en">NodeJS</a>, and a copy of <a href="https://cycling74.com/downloads">Max MSP</a> for all processing and electronic
+					accompaniment.</span> A free version of Max is fine.
+				</p>
 				<ol>
 					<li>Download a local copy of the score from the <a href="/">GitHub</a> repository. It will contain the score and Max patch</li>
 				</ol>
